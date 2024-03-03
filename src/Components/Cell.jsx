@@ -7,9 +7,7 @@ function Cell() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (refOne.current && !refOne.current.contains(event.target)) {
-        setActive(false);
-      }
+      setActive(false);
     };
 
     document.addEventListener('click', handleClickOutside, true);
@@ -26,7 +24,8 @@ function Cell() {
         className='rounded-full border-2 border-black-500 px-4 py-4 hover:border-black'
         onClick={() => setActive(!active)}
       ></button>
-       {active && <Mood ref={refOne} />}
+      {/* {active && <Mood ref={refOne} />} */}
+      {active && <Mood />}
     </>
   );
 }
